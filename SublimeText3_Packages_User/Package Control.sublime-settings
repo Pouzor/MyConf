@@ -1,0 +1,20 @@
+{
+	"installed_packages":
+	[
+		"3024 Color Scheme",
+		"DocBlockr",
+		"Git",
+		"MongoDB - PHP Completions",
+		"Origami",
+		"PHP-Twig",
+		"PHPUnit",
+		"SimplePHPUnit",
+		"SublimeCodeIntel",
+		"SublimeLinter",
+		"SublimeLinter-json",
+		"SublimeLinter-phpcs",
+		"Symfony2 Snippets",
+		"Terminal",
+		"Theme - Soda"
+	]
+}
