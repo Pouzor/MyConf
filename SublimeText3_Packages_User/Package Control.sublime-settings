@@ -2,12 +2,14 @@
 	"installed_packages":
 	[
 		"3024 Color Scheme",
+		"Alignment",
 		"DocBlockr",
 		"Git",
 		"MongoDB - PHP Completions",
 		"Origami",
 		"PHP-Twig",
 		"PHPUnit",
+		"SideBarEnhancements",
 		"SimplePHPUnit",
 		"SublimeCodeIntel",
 		"SublimeLinter",
@@ -18,3 +20,4 @@
 		"Theme - Soda"
 	]
 }
+
