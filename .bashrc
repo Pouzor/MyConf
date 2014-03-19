@@ -32,6 +32,7 @@ alias clean='rm -rf *#'
 alias gz='tar -cvzf'
 alias emacs='emacs -nw'
 alias ne='emacs -nw'
+alias reload='source ~/.bashrc'
 
 if [ "$TERM" != "dumb" ]; then
     export LS_OPTIONS='--color=auto'
@@ -47,3 +48,18 @@ alias sl='./symfony doctrine:build --all --and-load --no-confirmation && ./symfo
 
 #SF2
 alias ccache='sudo rm -rf app/cache/* && ./app/console cache:clear && chmod 777 -R app/cache'
+
+function myip {
+  myip=`elinks -dump http://checkip.dyndns.org:8245/`
+  echo "${myip}"
+}
+
+
+clear
+# Gotta love ASCII art with figlet
+figlet "Welcome, " $USER;
+echo -e ""
+echo -ne "Today is "; date
+echo -e ""; cal ;
+echo -ne "Up time:";uptime | awk /'up/'
+echo "";
