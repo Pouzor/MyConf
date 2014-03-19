@@ -2,14 +2,17 @@
 
 xset b off
 xset r rate 300 100
-
+# Git branch in prompt.
+parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
 
 export EDITOR='nano'
 export GIT_EDITOR='nano'
 export EVENT_NOKQUEUE=1
 export HISTSIZE=1000
 export PAGER='more'
-export PS1='\[\033[01;34m\]\u\[\033[01;36m\][\t]\[\033[00m\]\[\033[00;34m\]`echo " [$?]"`\[\033[00m\] : \[\033[00;32m\]\w\[\033[00m\]\[\033[00;31m\] => \[\033[00m\]'
+export PS1='\[\033[01;34m\]\u\[\033[01;36m\][\t]\[\033[00m\]\[\033[00;34m\]`echo " [$?]"`\[\033[00m\] \[\033[32m\]`echo $(parse_git_branch)`\[\033[00m\] : \[\033[00;32m\]\w\[\033[00m\]\[\033[00;31m\] => \[\033[00m\]'
 export SAVEHIST=1000
 export WATCH='all'
 export PATH=/opt/local/bin:/opt/local/sbin:/opt/local/lib/postgresql83/bin:$PATH
