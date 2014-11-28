@@ -16,6 +16,7 @@ export PS1='\[\033[01;34m\]\u\[\033[01;36m\][\t]\[\033[00m\]\[\033[00;34m\]`echo
 export SAVEHIST=1000
 export WATCH='all'
 export PATH=/opt/local/bin:/opt/local/sbin:/opt/local/lib/postgresql83/bin:$PATH
+export JAVA_HOME=/usr/bin/java
 alias ll='ls -l -G'
 alias ls='ls -G'
 alias la='ls -la -G'
@@ -53,6 +54,11 @@ function myip {
   myip=`elinks -dump http://checkip.dyndns.org:8245/`
   echo "${myip}"
 }
+
+#Notify gnome alert when ;alert command
+alias alert_helper='history|tail -n1|sed -e "s/^\s*[0-9]\+\s*//" -e "s/;\s*alert$//"'
+alias alert='notify-send -i /usr/share/icons/gnome/32x32/apps/gnome-terminal.png "[$?] $(alert_helper)"'
+
 
 
 clear
