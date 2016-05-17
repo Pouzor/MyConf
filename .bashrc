@@ -16,6 +16,7 @@ export PS1='\[\033[01;34m\]\u\[\033[01;36m\][\t]\[\033[00m\]\[\033[00;34m\]`echo
 export SAVEHIST=1000
 export WATCH='all'
 export PATH=/opt/local/bin:/opt/local/sbin:/opt/local/lib/postgresql83/bin:$PATH
+export PATH=~/.composer/vendor/bin:$PATH
 export JAVA_HOME=/usr/bin/java
 alias ll='ls -l -G'
 alias ls='ls -G'
@@ -61,8 +62,15 @@ alias alert='notify-send -i /usr/share/icons/gnome/32x32/apps/gnome-terminal.png
 
 
 #Alias for speedup composer
-alias composer="php -d zend.enable_gc=0 composer.phar"
+#alias composer="php -d zend.enable_gc=0 composer.phar"
 
+#alias phpunit
+alias test="phpunit -c app"
+
+alias tailf="tail -f"
+alias phpstorm="~/Documents/PhpStorm-138.2000.2262/bin/phpstorm.sh"
+alias tailn="tail -n 200"
+alias mstart="sudo mongod  --dbpath /var/lib/mongodb"
 
 clear
 # Gotta love ASCII art with figlet
