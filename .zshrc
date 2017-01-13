@@ -84,11 +84,10 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias glance='docker run -v /var/run/docker.sock:/var/run/docker.sock:ro --pid host -it docker.io/nicolargo/glances'
+alias meteo='curl -4 http://wttr.in'
+alias mongoclient='docker run -d -p 3000:3000 mongoclient/mongoclient'
+alias mstart='sudo mongod --dbpath /media/pouzor/SSD1T/MongoV3.2'
+alias phpstorm='/media/pouzor/SSD1T/Documents/PhpStorm-145.258.2/bin/phpstorm.sh'
+alias swagger='docker run -p 80:8080 swaggerapi/swagger-editor'
+alias test='./vendor/phpunit/phpunit/phpunit'
