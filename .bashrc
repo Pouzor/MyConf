@@ -15,7 +15,7 @@ export PAGER='more'
 export PS1='\[\033[01;34m\]\u\[\033[01;36m\][\t]\[\033[00m\]\[\033[00;34m\]`echo " [$?]"`\[\033[00m\] \[\033[32m\]`echo $(parse_git_branch)`\[\033[00m\] : \[\033[00;32m\]\w\[\033[00m\]\[\033[00;31m\] => \[\033[00m\]'
 export SAVEHIST=1000
 export WATCH='all'
-export PATH=/opt/local/bin:/opt/local/sbin:/opt/local/lib/postgresql83/bin:$PATH
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH=~/.composer/vendor/bin:$PATH
 export JAVA_HOME=/usr/bin/java
 alias ll='ls -l -G'
@@ -35,10 +35,9 @@ alias gz='tar -cvzf'
 alias emacs='emacs -nw'
 alias ne='emacs -nw'
 alias reload='source ~/.bashrc'
+alias meteo='curl -4 http://wttr.in'
 
-if [ "$TERM" != "dumb" ]; then
-    export LS_OPTIONS='--color=auto'
-fi
+export LS_OPTIONS='--color=auto'
 
 alias ls='ls $LS_OPTIONS -hF'
 alias ll='ls $LS_OPTIONS -lAhF'
@@ -62,15 +61,14 @@ alias alert='notify-send -i /usr/share/icons/gnome/32x32/apps/gnome-terminal.png
 
 
 #Alias for speedup composer
-#alias composer="php -d zend.enable_gc=0 composer.phar"
 
 #alias phpunit
 alias test="phpunit -c app"
 
 alias tailf="tail -f"
-alias phpstorm="~/Documents/PhpStorm-138.2000.2262/bin/phpstorm.sh"
+alias phpstorm="/media/pouzor/SSD1T/Documents/PhpStorm-145.258.2/bin/phpstorm.sh"
 alias tailn="tail -n 200"
-alias mstart="sudo mongod  --dbpath /var/lib/mongodb"
+alias mstart="sudo mongod --dbpath /media/pouzor/SSD1T/MongoV3.2"
 
 clear
 # Gotta love ASCII art with figlet
@@ -80,3 +78,18 @@ echo -ne "Today is "; date
 echo -e ""; cal ;
 echo -ne "Up time:";uptime | awk /'up/'
 echo "";
+
+
+#DOCKER
+alias dstart="newgrp docker"
+alias drm="docker rm $(docker ps -a -q)"
+alias drmi="docker rmi $(docker images -q)"
+alias drm_exited="docker rm `docker ps -aq -f status=exited`"
+
+#DOCKER ALIAS
+alias glance="docker run -v /var/run/docker.sock:/var/run/docker.sock:ro --pid host -it docker.io/nicolargo/glances"
+alias swagger="docker run -p 80:8080 swaggerapi/swagger-editor"
+alias mongoclient="docker run -d -p 3000:3000 mongoclient/mongoclient"
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
