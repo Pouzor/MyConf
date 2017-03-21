@@ -91,3 +91,10 @@ alias mstart='sudo mongod --dbpath /media/pouzor/SSD1T/MongoV3.2'
 alias phpstorm='/media/pouzor/SSD1T/Documents/PhpStorm-145.258.2/bin/phpstorm.sh'
 alias swagger='docker run -p 80:8080 swaggerapi/swagger-editor'
 alias test='./vendor/phpunit/phpunit/phpunit'
+
+#Alias docker
+alias dls='docker ps -a'
+alias dlsi='docker images'
+#Remove all container
+alias drm='docker rm `docker ps -aq`'
+alias drmi='docker rmi $(docker images -q)'
