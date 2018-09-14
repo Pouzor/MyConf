@@ -7,7 +7,8 @@ export TERM="xterm-256color"
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-
+export JAVA_HOME=/usr/lib/jvm/java-8-oracle
+export PATH=$PATH:/usr/local/go/bin
 
 #ZSH_THEME="agnoster"
 DEFAULT_USER="pouzor"
@@ -88,8 +89,11 @@ alias glance='docker run -v /var/run/docker.sock:/var/run/docker.sock:ro --pid h
 alias meteo='curl -4 http://wttr.in'
 alias mongoclient='docker run -d -p 3000:3000 mongoclient/mongoclient'
 alias mstart='sudo mongod --dbpath /media/pouzor/SSD1T/MongoV3.2'
-alias phpstorm='/media/pouzor/SSD1T/Documents/PhpStorm-145.258.2/bin/phpstorm.sh'
+#alias phpstorm='/media/pouzor/SSD1T/Documents/PhpStorm-172.4155.25/bin/phpstorm.sh'
 alias swagger='docker run -p 80:8080 swaggerapi/swagger-editor'
+
+alias screenshot='flameshot gui'
+
 alias test='./vendor/phpunit/phpunit/phpunit'
 
 #Alias docker
@@ -98,3 +102,10 @@ alias dlsi='docker images'
 #Remove all container
 alias drm='docker rm `docker ps -aq`'
 alias drmi='docker rmi $(docker images -q)'
+alias standup= 'cd /home/pouzor/Sites && git standup -m 2 -d 2 && cd -'
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/pouzor/Téléchargements/google-cloud-sdk/path.zsh.inc' ]; then source '/home/pouzor/Téléchargements/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/pouzor/Téléchargements/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/pouzor/Téléchargements/google-cloud-sdk/completion.zsh.inc'; fi
