@@ -1,8 +1,8 @@
 # Path to your oh-my-zsh installation.
-  export ZSH=/Users/remy.j/.oh-my-zsh
+export ZSH=/Users/remy.j/.oh-my-zsh
 export TERM="xterm-256color"
 
-DEFAULT_USER="remy.j"
+DEFAULT_USER="Pouzor"
 ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_MODE='nerdfont-complete'
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
@@ -26,11 +26,16 @@ alias dls='docker ps -a'
 alias dlsi='docker images'
 #Remove all container
 alias drm='docker rm `docker ps -aq`'
+#Remove all images
 alias drmi='docker rmi $(docker images -q)'
-alias standup= 'cd /home/pouzor/Sites && git standup -m 2 -d 2 && cd -'
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/pouzor/Téléchargements/google-cloud-sdk/path.zsh.inc' ]; then source '/home/pouzor/Téléchargements/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/pouzor/Téléchargements/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/pouzor/Téléchargements/google-cloud-sdk/completion.zsh.inc'; fi
+#Clean all non attached Image/Container/Volumes
+docker system prune -a
+#List exited container
+docker ps -a -f status=exited
+#Remove Exited container
+docker rm $(docker ps -a -f status=exited -q)
+#List all volume
+docker volume ls
+#Remove volume
+docker volume prune
